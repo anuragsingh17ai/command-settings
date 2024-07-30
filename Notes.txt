@@ -1,0 +1,36 @@
+# git is a software that is used to track changes to your file
+# github is a online service that host git 
+
+-----------------------------------------------------------------------------
+repo | folder | directory are same (collection of files)
+
+--> git --version  # to check version of git
+--> git status # to check status i.e which is tracked or which is not 
+
+------------------------------------------------------------------------------
+to save your own username and email so git can track who is the owner of the current project. it basically save our details in config file
+
+--> git config --global user.email "anuragsingh17ai@gmail.com" #adding email address globally
+--> git config --global user.name "anuragsingh17ai" #adding username globally: 
+
+--> git config --list #to check list of users : 
+
+--------------------------------------------------------------------------------
+to initialize repo
+
+--> git status # checking current status of repo
+--> git init # initialize repo ,by default it is done in master branch
+--> git add <file1> <file2>  # stagging file that means which file changes are to be comitted in repo
+--> git add . # alternative to above command . it will stage all files so not need to specifically mention
+--> git status # checking current status to find which files are staged. not menditory but good practice
+--> git rm --cached <file1> <file2> # this is used to unstage
+--> git commit -m "message" # this file change staged file in local repo with the message
+
+---> git log # to find logging history 
+---> git log  --online # to see logs in online
+
+---------------------------------------------------------------------------------------
+in .gitignore we keep those file that are not needed to be tracked
+in .gitkeep  we add file that are to be tracked even if the folder is empty as git doesnot track empty folders
+ 
+
