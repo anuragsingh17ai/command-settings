@@ -32,5 +32,32 @@ to initialize repo
 ---------------------------------------------------------------------------------------
 in .gitignore we keep those file that are not needed to be tracked
 in .gitkeep  we add file that are to be tracked even if the folder is empty as git doesnot track empty folders
- 
+
+----------------------------------------------------------------------------------
+branching 
+
+--> git branch # check all branch of current repo
+--> git branch <name of new branch>  # create a new branch other than master branch
+--> git switch <name of new branch> # switch to other branch
+--> git logs # histoy or logging details 
+--> git switch -c <name of branch> # it will create new branch if not exist then move to that branch basically it combine git branch <name> and git switch <name>
+--> git checkout <name of branch> # it will check whether the branch exist or not. if exist then move to that branch else error
+
+------------------------------------------------------------------------------------
+merging
+
+--> git checkout <branch name> # move to branch where we have to merge other branch
+--> git merge <branch name> # it will merge branch name to current branch  but it doesn't means branch name will be destroyed it only means changes in branch code will merge to other branch
+--> git merge --abort # to abort merge in case of conflict
+--> git add .
+--> git commit -m "message" 
+
+-------------------------------------------------------------------------------
+rename a branch 
+
+--> git branch -m <old-branch-name> <new-branch-name>
+
+delete  a branch 
+
+--> git branch -d <branch-name>
 
