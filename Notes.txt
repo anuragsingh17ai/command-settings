@@ -49,15 +49,74 @@ merging
 --> git checkout <branch name> # move to branch where we have to merge other branch
 --> git merge <branch name> # it will merge branch name to current branch  but it doesn't means branch name will be destroyed it only means changes in branch code will merge to other branch
 --> git merge --abort # to abort merge in case of conflict
---> git add .
---> git commit -m "message" 
 
 -------------------------------------------------------------------------------
 rename a branch 
 
---> git branch -m <old-branch-name> <new-branch-name>
+--> git branch -m <old-branch-name> <new-branch-name> # rename any branch
+--> git branch -m <new-name-of-current-branch>        # rename current branch
 
 delete  a branch 
 
 --> git branch -d <branch-name>
 
+-------------------------------------------------------------------------------
+finding difference
+
+--> git diff --staged # to find info about stagged 
+--> git diff <branch-name-one> <branch-name-two> # to find info about two branches
+or 
+--> git diff <branch-one>..<branch-two>
+
+-------------------------------------------------------------------------------
+stash
+saving on temprorary storage . we cannot shift branch without stagging/commiting changes of current branch as changes will get deleted if not stagged/commited
+so we can save these changes on temprorary storage than we can chage our branch 
+
+--> git stash # save work on temprorary storage
+--> git stash save "work in progress on X feature" # save work on temprorary storage with a name basically just on alternative of above command
+--> git stash list # to see list of stash 
+--> git stash apply # move changes to permanent location
+--> git stash apply stash@{0} # to move particular stash to permanent location here 0 is 0 is stash no. as stash are stored in form of stach with numbering you can see it using stash list so just change 0 to no. of stash you want to apply
+--> git stash pop   # apply and remove stash 
+--> git stash apply stash@{0} <branch-name> # apply a particular stash to  a particular branch 
+--> git stash clear # to remove stash
+
+-------------------------------------------------------------------------------------------------
+Tags are a way to mark a specific point in your repository. They are useful when you want ot remember a specific version of your code or when you want to refer to a specific
+commit. Tags are like sticky notes that you can attach to your commit 
+
+--> git tag <tag-name> #tag will attach to current commit 
+--> git tag -a <tag-name> -m "Release 1.0" # create an annotated tag with the specific name and message 
+--> git tag <tag-name> <commit-hash> # taging a specific commit 
+--> git push origin <tag-name> #push tags to remote repo 
+--> git tag -d <tag-name> #delete a tag
+
+---------------------------------------------------------------------------------------------------
+git rebase changing base of current branch . It is always done on sub branch not main branch
+
+--> git checkout < branch name> 
+--> git rebase master 
+
+----------------------------------------------------------------------------------------------------
+git reflog shows you the history of your commits / aur to reset your code 
+
+--> git reflog 
+--> git reset --hard <commit-hash> # this help to move back to a code of a particular commit . you can find hash with git reflog or git log 
+or 
+--> git reset --hard HEAD@{1} # to move one commit back . Here no. represent to how much commit back you wanna move 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+generate ssh key and add to github . You can generate a new SSH key on your local machine. 
+After you generate the key, you can add the public key to your account on GitHub.com to enable authentication for Git operations over SSH.
+
+ssh-keygen -t ed25519 -C "email_adress"
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+pushing on gihub 
+
+--> git branch -m main  # change current branch name to main. 
+--> git remote -v # display the urls of remote repo that are associated to local repo 
+--> git remote add origin <link-of-remote-repo.git> # here origin is the name of remote url where it is to be pushed .you can name it anything else but origin is common
+--> git push -u origin main
