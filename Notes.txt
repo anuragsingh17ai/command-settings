@@ -119,4 +119,4 @@ pushing on gihub
 --> git branch -m main  # change current branch name to main. 
 --> git remote -v # display the urls of remote repo that are associated to local repo 
 --> git remote add origin <link-of-remote-repo.git> # here origin is the name of remote url where it is to be pushed .you can name it anything else but origin is common
---> git push -u origin main
+--> git push -u origin main # origin name of remote url , main name of branch
