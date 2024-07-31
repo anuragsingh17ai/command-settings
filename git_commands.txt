@@ -119,4 +119,19 @@ pushing on gihub
 --> git branch -m main  # change current branch name to main. 
 --> git remote -v # display the urls of remote repo that are associated to local repo 
 --> git remote add origin <link-of-remote-repo.git> # here origin is the name of remote url where it is to be pushed .you can name it anything else but origin is common
---> git push -u origin main # origin name of remote url , main name of branch
+--> git push -u origin main # origin name of remote url , main name of branch 
+
+---------------------------------------------------------------------------------------------
+cloning 
+
+git clone <remote-url-of-repo>
+
+----------------------------------------------------------------------------------------
+steps to open source contribution
+
+step 1: fork
+step 2: clone 
+step 3: add changes in local repo 
+steps 4: add comments and commit to change in local repo 
+steps 5: push to forked repo 
+step 6: click on contribute than on pull request to create pull request
